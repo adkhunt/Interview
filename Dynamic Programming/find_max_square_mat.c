@@ -48,13 +48,6 @@ int i,j,maximum = 0;
 	for(i = 0 ; i < size ; ++i)
 	{
 		for(j = 0 ; j < size ; ++j)
-			printf("%d ",temp[i][j]);
-		printf("\n");
-	}
-
-	for(i = 0 ; i < size ; ++i)
-	{
-		for(j = 0 ; j < size ; ++j)
 			maximum = max(maximum,temp[i][j]);
 	}
 
