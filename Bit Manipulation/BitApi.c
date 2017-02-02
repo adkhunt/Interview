@@ -8,7 +8,7 @@
 //					     //
 ///////////////////////////////////////////////
 
-int SetBit(int *num,int BitPosition)
+void SetBit(int *num,int BitPosition)
 {
 	*num = (*num) | (1 << BitPosition);
 }
