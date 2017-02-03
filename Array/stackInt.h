@@ -49,6 +49,11 @@ int pop(stack *s)
 	}
 }
 
+int top(stack *s)
+{
+	return s->arr[s->start];
+}
+
 bool isEmpty(stack *s)
 {
 	return s->start == -1;
