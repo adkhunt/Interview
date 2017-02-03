@@ -2,7 +2,7 @@
 #define stackInt
 
 #include<stdbool.h>
-
+#include<stdlib.h>
 
 typedef struct data{
 			int start,limit;
