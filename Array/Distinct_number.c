@@ -21,19 +21,19 @@ int i,max = 0;
 
 int count_distinct(int *a,int size)
 {
-int i,count = 1;
+int i,count = 0;
 
 	int max = getMax(a,size);
 
-bool hash[max];
+bool hash[max+1];
 
-	for(i = 0 ; i < max ; ++i)
+	for(i = 0 ; i <= max ; ++i)
 		hash[i] = false;
 
 	for(i = 0 ; i < size ; ++i)
 		hash[a[i]] = true;
 
-	for(i = 0 ; i < max ; ++i)
+	for(i = 0 ; i <= max ; ++i)
 		if(hash[i] == true)
 			++count;
 
