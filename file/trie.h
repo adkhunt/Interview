@@ -43,21 +43,24 @@ node *temp = *head;
 	++(temp->count);
 }
 
-void print_word( node *root )
+void print_word( node *root ,char *str,int level)
 {
 int i; 
 
 	for( i = 0; i < 256; i++)
 	{
 		if( root->ptr[i] != NULL){
-			printf("%c", i);
-			print_word(root->ptr[i]);
+			str[level] = (char) i;
+			print_word(root->ptr[i],str,level+1);
 		}
 
 	}
 	
 	if(root->eow == true)
-		printf(" -> %d\n",root->count);
+	{
+		str[level] = '\0';
+		printf("%s -> %d\n",str,root->count);
+	}
 }
 
 bool search_word(node *data,char *str)

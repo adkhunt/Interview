@@ -31,6 +31,7 @@ int main()
 node *data = (node*) malloc(sizeof(node));
 FILE *fp = null;
 char str[20];
+char *temp = null;
 
 	fp = fopen("data","r");
 
@@ -46,7 +47,9 @@ char str[20];
 		insert_word(&data,str);
 	}
 
-	print_word(data);
+	temp = (char*) malloc(sizeof(char)*20);
+
+	print_word(data,temp,0);
 
 	return EXIT_SUCCESS;
 }
