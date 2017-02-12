@@ -18,12 +18,30 @@ int i = 0;
 	return i;
 }
 
-void remove_last_symbol(char *str)
+void remove_symbol(char *str)
 {
 int len = my_strlen(str);
+int i,flag = 0;
 
-	if((str[len-1] < 'A' || str[len-1] > 'Z') && (str[len-1] < 'a' || str[len-1] > 'z'))
-		str[len-1] = '\0';
+	if((str[0] <= 'A' || str[0] >= 'Z') && (str[0] <= 'a' || str[0] >= 'z'))
+	{
+		flag = 1;
+		for(i = 1 ; str[i] ; ++i)
+			str[i-1] = str[i];
+		str[i-1] = '\0';
+	}
+
+	if(flag)
+	{
+		if((str[len-2] <= 'A' || str[len-2] >= 'Z') && (str[len-2] <= 'a' || str[len-2] >= 'z'))
+			str[len-2] = '\0';
+	}
+
+	else
+	{
+		if((str[len-1] <= 'A' || str[len-1] >= 'Z') && (str[len-1] <= 'a' || str[len-1] >= 'z'))
+			str[len-1] = '\0';
+	}
 }
 
 int main()
@@ -43,7 +61,7 @@ char *temp = null;
 
 	while((fscanf(fp,"%s",str))!=EOF)
 	{
-		remove_last_symbol(str);
+		remove_symbol(str);
 		insert_word(&data,str);
 	}
 

@@ -6,7 +6,7 @@
 #define null NULL
 
 typedef struct node{
-			struct node *ptr[256];
+			struct node *ptr[230];
 			bool eow;
 			int count;
 } node;
@@ -17,7 +17,7 @@ int i;
 
 	node *temp = (node*) malloc(sizeof(node));
 	
-	for(i = 0 ; i < 256 ; ++i)
+	for(i = 0 ; i < 230 ; ++i)
 		temp->ptr[i] = null;
 
 	temp->eow = false;
@@ -30,13 +30,16 @@ void insert_word(node **head,char *str)
 {
 int i;
 node *temp = *head;
+int index;
 
 	for(i = 0 ; str[i] ; ++i)
 	{
-		if(temp->ptr[str[i]] == null)
-			temp->ptr[str[i]] = get_new_node();
+		index = (str[i] >= 'A' && str[i] <= 'Z') ? str[i]+32 : str[i];
 
-		temp = temp->ptr[str[i]];
+		if(temp->ptr[index] == null)
+			temp->ptr[index] = get_new_node();
+
+		temp = temp->ptr[index];
 	}
 
 	temp->eow = true;
@@ -47,7 +50,7 @@ void print_word( node *root ,char *str,int level)
 {
 int i; 
 
-	for( i = 0; i < 256; i++)
+	for( i = 0; i < 230 ; i++)
 	{
 		if( root->ptr[i] != NULL){
 			str[level] = (char) i;

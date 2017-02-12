@@ -3,6 +3,12 @@
 #define exit 0
 #define null NULL
 
+///////////////////////////////////////////////
+//					     //
+// Program to sort linklist using merge sort //
+//					     //
+///////////////////////////////////////////////
+
 struct node{
 		int num;
 		struct node *next;
@@ -51,27 +57,73 @@ void print_list(struct node *hptr)
 	printf("\n");
 }
 
-void partition(struct node *hptr,struct node **first,struct node **second)
+struct node* merge(struct node *first,struct node *second)
 {
-	if(hptr == null)
-		return;
+	if(first == null)
+		return second;
 
-	struct node *slow = 
+	else if(second  == null)
+		return first;
+
+struct node  *res = null;
+
+	if(first->num >= second->num)
+	{
+		res = second;
+		res->next = merge(first,second->next);
+	}
+
+	else
+	{
+		res = first;
+		res->next = merge(first->next,second);
+	}
+
+	return res;
 }
 
-struct node* merge_sort(struct node *hptr)
+void partition(struct node *hptr,struct node **first,struct node **second)
 {
-	if(hptr == null)
-		return hptr;
+	if(hptr == null || hptr->next == null)
+	{
+		*first = hptr;
+		*second = null;
+	}
+
+	else
+	{
+		struct node *slow = hptr;
+		struct node *fast = hptr->next;
+
+		while(fast)
+		{
+			fast = fast -> next;
+			if(fast)
+			{
+				slow = slow -> next;
+				fast = fast->next;
+			}
+		}
+
+		*first = hptr;
+		*second = slow->next;
+		slow->next = null;
+	}
+}
+
+void merge_sort(struct node **hptr)
+{
+	if(*hptr == null || (*hptr)->next == null)
+		return ;
 
 	struct node *first = null;
 	struct node *second = null;
 
-	partition(hptr,&first,&second);
-	merge_sort(first);
-	merge_sort(secod);
+	partition(*hptr,&first,&second);
+	merge_sort(&first);
+	merge_sort(&second);
 
-	return merge(first,second);
+	*hptr = merge(first,second);
 }
 
 int main()
@@ -80,13 +132,13 @@ struct node *hptr = null;
 char ch;
 
 	do{
-		add_list_last(&hptr);
+		add_node_last(&hptr);
 		printf("Do you want to continue?(Y/y)\n");
 		scanf(" %c",&ch);
 	}while(ch == 'Y' || ch == 'y');
 
 	print_list(hptr);
-	hptr = merge_sort(hptr);
+	merge_sort(&hptr);
 	print_list(hptr);
 
 	return exit;
