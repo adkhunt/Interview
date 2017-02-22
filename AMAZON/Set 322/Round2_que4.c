@@ -4,6 +4,13 @@
 
 #define exit_success 0
 
+/////////////////////////////////////////////////////
+//						   //
+// Program to solve tower of hanoi using iteration //
+// Not a complete code				   //
+//						   //
+/////////////////////////////////////////////////////
+
 typedef struct node{
 			int disk;
 			char dest,source,temp;
@@ -70,12 +77,13 @@ stack *s = create_stack(20);
 	{
 		if(n == 0)
 			break;
-		temp.disk = n--;
-		temp.temp = aux;
-		temp.dest = dest;
-		temp.source = source;
-		swap(&aux,&dest);
-		push(s,temp);
+
+			temp.disk = n--;
+			temp.temp = aux;
+			temp.dest = dest;
+			temp.source = source;
+			swap(&aux,&dest);
+			push(s,temp);
 	}
 
 	while(!isEmpty(s))
@@ -83,9 +91,7 @@ stack *s = create_stack(20);
 		temp = pop(s);
 	
 		printf("move %d from %c to %c\n",temp.disk,temp.source,temp.dest);
-		if(temp.disk == 3)
-			printf("mode %d from %c to %c\n",temp.disk-2,temp.temp,temp.source);
-			
+
 		if(temp.disk > 1)
 		{
 			node dt;
@@ -93,6 +99,7 @@ stack *s = create_stack(20);
 			dt.source = temp.temp;
 			dt.temp = temp.source;
 			dt.dest = temp.dest;
+			n = temp.disk;
 			push(s,dt);
 		}
 	}
