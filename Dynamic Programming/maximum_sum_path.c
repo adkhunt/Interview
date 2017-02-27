@@ -11,29 +11,28 @@
 
 int Find_Maximum_Sum(int tri[SIZE][SIZE])
 {
-int i,j;
+int i,j = 0,sum = tri[0][0];
 
-	for(i = SIZE-2 ; i >= 0 ; --i)
+	for(i = 1 ; i < SIZE ; ++i)
 	{
-		for(j = 0 ; j <= i ; ++j)
-		{
-			if(tri[i+1][j] > tri[i+1][j+1])
-				tri[i][j] += tri[i+1][j];
+		if(tri[i][j] > tri[i][j+1])
+			sum += tri[i][j];
 
-			else
-				tri[i][j] += tri[i+1][j+1];
+		else{
+			sum += tri[i][j+1];
+			++j;
 		}
 	}
 
-	return tri[0][0];
+	return sum;
 }
 
 int main()
 {
-int tri[SIZE][SIZE] = { {8,0,0,0},
-			{-4,4,0,0},
-			{2,2,6,0},
-			{1,1,1,1} };
+int tri[SIZE][SIZE] = { {3,0,0,0},
+			{7,4,0,0},
+			{2,4,6,0},
+			{8,5,9,3} };
 
 	int res = Find_Maximum_Sum(tri);
 
