@@ -100,7 +100,7 @@ int i; //Iterator which iterate through array
 		if(pair.sum < table[i])
 		{
 			pair.sum = table[i];
-			pair.level = i;
+			pair.level = i + 1;
 		}
 	}
 
