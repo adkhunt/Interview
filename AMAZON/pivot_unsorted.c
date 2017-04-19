@@ -64,7 +64,7 @@ int i, left_array[size], right_array[size];
 
 int main()
 {
-int arr[] = {3, 1, 5, 2, 4, 8, 11, 13, 9, 12, 10};
+int arr[] = {3, 1, 5, 2, 4, 7, 8, 11, 13, 9, 12, 15};
 int size = sizeof(arr)/sizeof(arr[0]);
 
 	int pivot = find_pivot(arr,size);
