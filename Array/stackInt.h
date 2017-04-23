@@ -1,5 +1,5 @@
-#ifndef stackInt
-#define stackInt
+#ifndef STACKINT
+#define STACKINT
 
 #include<stdbool.h>
 #include<stdlib.h>
