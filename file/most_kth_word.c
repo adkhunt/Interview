@@ -24,6 +24,8 @@ int i, index = 0;
 		else if(str[i] >= 'a' && str[i] <= 'z')
 			str[index++] = str[i];
 	}
+
+	str[index] = '\0';
 }
 
 /*
