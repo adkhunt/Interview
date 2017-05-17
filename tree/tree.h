@@ -6,10 +6,26 @@
 
 #define null NULL
 
+/*
+ * This is the header file which perform 
+ * all basic operation like insert node in
+ * tree,print tree
+ */
+
+/*
+ * This structure variable holds the integer
+ * and two self referencial pointer 
+ */
+
 struct node{
 		int num;
 		struct node *right,*left;
 };
+
+/*
+ * This function will return the new node with
+ * some basic intialisation
+ */
 
 struct node* get_new_node(int num)
 {
@@ -20,6 +36,11 @@ struct node* get_new_node(int num)
 
 	return ret;
 }
+
+/*
+ * This function will insert the node in the 
+ * tree
+ */
 
 void BuildTree(struct node **root,int num)
 {
@@ -90,6 +111,11 @@ int arr[12] = {10,7,3,1,6,4,18,15,14,25,22,28},i;
 	return root;
 }
 
+/*
+ * This function will print the tree in 
+ * inorder fashion using resursion
+ */
+
 void printInorderRecursive(struct node *root)
 {
 	if(root)
@@ -99,6 +125,11 @@ void printInorderRecursive(struct node *root)
 		printInorderRecursive(root->right);
 	}
 }
+
+/*
+ * This function will print the tree in
+ * postorder fashion using resursion
+ */
 
 void printPostorderRecursive(struct node *root)
 {
@@ -110,6 +141,11 @@ void printPostorderRecursive(struct node *root)
 	}
 }
 
+/*
+ * This function will print the tree in 
+ * preorder fashion using recursion
+ */
+
 void printPreorderRecursive(struct node *root)
 {
 	if(root)
@@ -119,6 +155,11 @@ void printPreorderRecursive(struct node *root)
 		printPreorderRecursive(root->right);
 	}
 }
+
+/*
+ * This function print the tree in inorder
+ * fashion using morris traversal
+ */
 
 void printInorderIterative(struct node *root) // Morris Traversaal
 {
@@ -157,6 +198,11 @@ void printInorderIterative(struct node *root) // Morris Traversaal
 	printf("\n");
 }
 
+/*
+ * This function will print the tree in 
+ * inorder fashion using stack 
+ */
+
 void printInorderStack(struct node *root)
 {
 Stack *s = create_stack(15);
@@ -183,6 +229,11 @@ Stack *s = create_stack(15);
 	printf("\n");
 }
 
+/*
+ * This function will print the tree in 
+ * preorder fashion using stack
+ */
+
 void printPreorderIterative(struct node *root)
 {
 	if(root == NULL)
@@ -206,6 +257,11 @@ Stack *s = create_stack(20);		//assume that tree element size is les than 20 // 
 
 	printf("\n");
 }
+
+/*
+ * Print the tree in postorder traversal
+ * using stack 
+ */
 
 void printPostorderIterative(struct node *root)
 {
@@ -238,6 +294,57 @@ Stack *storeTraversal = create_stack(20);
 	}
 
 	printf("\n");
+}
+
+/*
+ * This function return the height 
+ * of the tree
+ */
+
+int get_height(struct node *root)
+{
+	if(root == NULL)
+		return 0;
+
+	int lh = get_height(root->left) + 1;
+	int rh = get_height(root->right) + 1;
+
+	return lh > rh ? lh : rh;
+}
+
+/*
+ * This function print the current level
+ * using recursion
+ */
+
+void print_level(struct node *root, int cur_level, int level)
+{
+	if(root == NULL)
+		return ;
+
+	if(cur_level == level)
+		printf("%d ",root->num);
+
+	print_level(root->left, cur_level + 1, level);
+	print_level(root->right, cur_level + 1, level);
+}
+
+/*
+ * Print the all level of binary tree
+ */
+
+void printLevelOrder(struct node *root)
+{
+	if(root == NULL)
+		return ;
+
+int height = get_height(root), i;
+
+	for(i = 1 ; i <= height ; ++i)
+	{
+		print_level(root, 1, i);
+		printf("\n");
+	}
 }
 
 #endif
