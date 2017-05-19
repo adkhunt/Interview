@@ -1,0 +1,11 @@
+/*
+ * Design the data structure where data 
+ * can access, delete and random access in 
+ * constant time
+ */
+
+For this we can use the Hashmap which support the insert, delete
+and get in constant time but to get random we use the size of hashmap
+so we get the random number from 0 to size by using the rand function
+after that we will return the random index which we get from rand function
+so by this way all the operation we can get the constant time
