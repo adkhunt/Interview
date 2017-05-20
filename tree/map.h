@@ -16,7 +16,7 @@
 typedef struct SUB_NODE{
 			int data;
 			struct SUB_NODE *next;
-} sub_nde;
+} sub_node;
 
 /*
  * This structure variable contain the
