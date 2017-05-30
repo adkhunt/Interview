@@ -3,67 +3,112 @@
 
 #include<stdbool.h>
 
+typedef struct QUEUE_NODE{
+				struct node *data;
+				struct QUEUE_NODE *next;
+				struct QUEUE_NODE *pre;
+} queue_node;
+
 typedef struct Queue{
-			int top,bottom,limit;
-			struct node **arr;
+			int filled,limit;
+			queue_node *front, *back;
 } Queue;
 
 Queue* create_queue(int size)
 {
-	Queue *ret = (Queue*) malloc(sizeof(Queue));
+	Queue *temp = (Queue*) malloc(sizeof(Queue));
 
-	ret->top = -1;
-	ret->bottom = -1;
-	ret->limit = size;
-	ret->arr = (struct node**) malloc(sizeof(struct node*));
+	temp->limit = size;
+	temp->filled = 0;
+	temp->front = NULL;
+	temp->back = NULL;
 
-	return ret;
+	return temp;
 }
 
-void enqueue(Queue *q,struct node *data)
+queue_node* get_new_node(struct node *data)
 {
-	if((q->top-q->bottom) != q->limit)
+	queue_node *temp = (queue_node*) malloc(sizeof(queue_node));
+
+	temp->data = data;
+	temp->next = NULL;
+	temp->pre = NULL;
+
+	return temp;
+}
+
+void enqueue(Queue *q, struct node *data)
+{
+	queue_node *cur_node = get_new_node(data);
+
+	if(q->filled == q->limit)
 	{
-		q->arr[++q->top] = data;
+		printf("Queue is full.\n");
+		return ;
+	}
+
+	else if(q->filled > 0)
+	{
+		cur_node->next = q->front;
+		q->front->pre = cur_node;
+		q->front = cur_node;
 	}
 
 	else
 	{
-		printf("QUEUE IS FULL\n");
+		q->front = cur_node;
+		q->back = cur_node;
 	}
+
+	++(q->filled);
 }
 
 struct node* dequeue(Queue *q)
 {
-	if(q->bottom != q->top)
+	if(q->filled <= 0)
 	{
-		return q->arr[++q->bottom];
+		printf("Queue is empty.\n");
+		return NULL;
+	}
+
+	else if(q->filled > 1)
+	{
+		queue_node *temp_node = q->back;
+		struct node *ret = temp_node->data;
+		q->back = temp_node->pre;
+		free(temp_node);
+		temp_node = NULL;
+		--(q->filled);
+		return ret;
 	}
 
 	else
 	{
-		printf("QUEUE IS EMPTY\n");
-		return NULL;
+		struct node *ret = q->back->data;
+		free(q->back);
+		q->back = q->front = NULL;
+		--(q->filled);
+		return ret;
 	}
 }
 
 struct node* front(Queue *q)
 {
-	if(q->bottom != q->top)
+	if(q->filled <= 0)
 	{
-		return q->arr[q->bottom+1];
+		printf("Queue is empty.\n");
+		return NULL;
 	}
 
 	else
 	{
-		printf("QUEUE IS EMPTY\n");
-		return NULL;
+		return q->back->data;
 	}
 }
 
 bool isQueueEmpty(Queue *q)
 {
-	return q->bottom == q->top;
+	return q->filled == 0;
 }
 
 #endif
