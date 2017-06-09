@@ -26,7 +26,7 @@ Queue* create_queue(int size)
 	return temp;
 }
 
-queue_node* get_new_node(struct node *data)
+queue_node* get_queue_node(struct node *data)
 {
 	queue_node *temp = (queue_node*) malloc(sizeof(queue_node));
 
@@ -39,7 +39,7 @@ queue_node* get_new_node(struct node *data)
 
 void enqueue(Queue *q, struct node *data)
 {
-	queue_node *cur_node = get_new_node(data);
+	queue_node *cur_node = get_queue_node(data);
 
 	if(q->filled == q->limit)
 	{
