@@ -4,7 +4,7 @@
 #include<stdbool.h>
 
 typedef struct QUEUE_NODE{
-				struct node *data;
+				void *data;
 				struct QUEUE_NODE *next;
 				struct QUEUE_NODE *pre;
 } queue_node;
@@ -26,7 +26,7 @@ Queue* create_queue(int size)
 	return temp;
 }
 
-queue_node* get_queue_node(struct node *data)
+queue_node* get_queue_node(void *data)
 {
 	queue_node *temp = (queue_node*) malloc(sizeof(queue_node));
 
@@ -37,7 +37,7 @@ queue_node* get_queue_node(struct node *data)
 	return temp;
 }
 
-void enqueue(Queue *q, struct node *data)
+void enqueue(Queue *q, void *data)
 {
 	queue_node *cur_node = get_queue_node(data);
 
@@ -63,7 +63,7 @@ void enqueue(Queue *q, struct node *data)
 	++(q->filled);
 }
 
-struct node* dequeue(Queue *q)
+void* dequeue(Queue *q)
 {
 	if(q->filled <= 0)
 	{
@@ -74,7 +74,7 @@ struct node* dequeue(Queue *q)
 	else if(q->filled > 1)
 	{
 		queue_node *temp_node = q->back;
-		struct node *ret = temp_node->data;
+		void *ret = temp_node->data;
 		q->back = temp_node->pre;
 		free(temp_node);
 		temp_node = NULL;
@@ -84,7 +84,7 @@ struct node* dequeue(Queue *q)
 
 	else
 	{
-		struct node *ret = q->back->data;
+		void *ret = q->back->data;
 		free(q->back);
 		q->back = q->front = NULL;
 		--(q->filled);
@@ -92,7 +92,7 @@ struct node* dequeue(Queue *q)
 	}
 }
 
-struct node* front(Queue *q)
+void* front(Queue *q)
 {
 	if(q->filled <= 0)
 	{

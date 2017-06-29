@@ -5,7 +5,7 @@
 
 typedef struct Stack{
 			int start,limit;
-			struct node **arr;
+			void **arr;
 } Stack;
 
 Stack* create_stack(int size)
@@ -14,12 +14,12 @@ Stack* create_stack(int size)
 
 	ret->start = -1;
 	ret->limit = size;
-	ret->arr = (struct node**) malloc(sizeof(struct node*)*size);
+	ret->arr =  malloc(sizeof(void*)*size);
 
 	return ret;
 }
 
-void push(Stack *s,struct node *nodeTopush)
+void push(Stack *s,void *nodeTopush)
 {
 	if(s->start != s->limit)
 	{
@@ -32,7 +32,7 @@ void push(Stack *s,struct node *nodeTopush)
 	}
 }
 
-struct node* pop(Stack *s)
+void* pop(Stack *s)
 {
 	if(s->start != -1)
 	{
@@ -46,7 +46,7 @@ struct node* pop(Stack *s)
 	}
 }
 
-struct node* top(Stack *s)
+void* top(Stack *s)
 {
 	return s->arr[s->start];
 }
