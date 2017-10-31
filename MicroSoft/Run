@@ -1,0 +1,9 @@
+#! /usr/bin/python
+
+import os
+import sys
+
+cmd = "cc "
+
+os.system(cmd+sys.argv[1])
+os.system("./a.out")
