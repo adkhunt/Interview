@@ -72,10 +72,6 @@ void largest_bends(struct node *root,char pre, char side, int num, int *max, int
 		a[*max] = root->num;
 	}
 
-	printf("Root = %d, pre = %c, side = %c, num = %d, max = %d, cur = %d\n",
-		root->num, pre, side, num, *max, cur_max);
-	
-
 	largest_bends(root->left, side, 'l', root->num, max, cur_max, a);
 	largest_bends(root->right, side, 'r', root->num, max, cur_max, a);
 }
@@ -92,9 +88,6 @@ int r_max = 0;
 
 	largest_bends(root->left,'n', 'l',root->num, &l_max, 1, arr);
 	largest_bends(root->right, 'n', 'r', root->num, &r_max, 1, arr);
-
-	printf("Left Height = %d\n",l_max);
-	printf("Right Height = %d\n",r_max);
 
 	return l_max > r_max ? l_max : r_max;
 }
@@ -114,6 +107,7 @@ char ch;
 
 		printf("Do you want to continue?[y/Y] ");
 		scanf("%c",&ch);
+	
 	}while(ch == 'y' || ch == 'Y');
 
 	print_tree(root);
