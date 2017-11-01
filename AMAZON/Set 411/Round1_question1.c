@@ -68,28 +68,47 @@ void largest_bends(struct node *root,char pre, char side, int num, int *max, int
 
 	if(*max < cur_max)
 	{
+		printf("Cur = %d\tPre = %d\n",root->num,num);
+		printf("Max = %d\n",*max);
+
+		printf("\n===================================\n");
+
+		a[*max] = num;
+		a[*max+1] = root->num;
 		*max = cur_max;
-		a[*max] = root->num;
 	}
 
 	largest_bends(root->left, side, 'l', root->num, max, cur_max, a);
 	largest_bends(root->right, side, 'r', root->num, max, cur_max, a);
 }
 
-int count_max_bends(struct node *root, int *arr)
+void print_arr(int *arr, int size)
+{
+int i = 0;
+
+	for(i = 0 ; i <= size ; ++i)
+		printf("%d ",arr[i]);
+
+	printf("\n");
+}
+
+void count_max_bends(struct node *root)
 {
 	if(root == NULL)
-		return 0;
+		return ;
 
 int l_max = 0;
 int r_max = 0;
+int l_arr[10], r_arr[10];
 
-	arr[0] = root->num;
+	largest_bends(root->left,'n', 'l',root->num, &l_max, 1, l_arr);
+	largest_bends(root->right, 'n', 'r', root->num, &r_max, 1, r_arr);
 
-	largest_bends(root->left,'n', 'l',root->num, &l_max, 1, arr);
-	largest_bends(root->right, 'n', 'r', root->num, &r_max, 1, arr);
+	if(l_max < r_max)
+		print_arr(r_arr, r_max);
 
-	return l_max > r_max ? l_max : r_max;
+	else
+		print_arr(l_arr, l_max);
 }
 
 
@@ -97,7 +116,6 @@ int main()
 {
 struct node *root = NULL;
 int num, num2, i;
-int arr[10];
 char ch;
 
 	do{
@@ -113,10 +131,7 @@ char ch;
 	print_tree(root);
 	printf("\n");
 
-	int res = count_max_bends(root, arr);
-
-	for(i = 0 ; i <= res ; ++i)
-		printf("%d ",arr[i]);
+	count_max_bends(root);
 
 	printf("\n");
 
