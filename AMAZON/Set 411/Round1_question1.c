@@ -68,11 +68,6 @@ void largest_bends(struct node *root,char pre, char side, int num, int *max, int
 
 	if(*max < cur_max)
 	{
-		printf("Cur = %d\tPre = %d\n",root->num,num);
-		printf("Max = %d\n",*max);
-
-		printf("\n===================================\n");
-
 		a[*max] = num;
 		a[*max+1] = root->num;
 		*max = cur_max;
