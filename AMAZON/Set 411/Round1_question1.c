@@ -1,11 +1,26 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+/*
+ * Program to find the path in tree which contain
+ * highest bends.
+ */
+
+/*
+ * This structure is common for node to hold data and
+ * pointer to its children
+ */
+
 struct node{
 		int num;
 		struct node *right;
 		struct node *left;
 };
+
+/*
+ * This function return the new created node
+ * with basic initialization
+ */
 
 struct node* get_new_node(int num)
 {
@@ -17,6 +32,10 @@ struct node* get_new_node(int num)
 
 	return temp;
 }
+
+/*
+ * This function add the node in the tree
+ */
 
 void add_node_tree(struct node **root, int num)
 {
@@ -48,6 +67,10 @@ void add_node_tree(struct node **root, int num)
 		*root = get_new_node(num);
 }
 
+/*
+ * Print the tree in in-order manner
+ */
+
 void print_tree(struct node *root)
 {
 	if(root == NULL)
@@ -57,6 +80,12 @@ void print_tree(struct node *root)
 	printf("%d ",root->num);
 	print_tree(root->right);
 }
+
+/*
+ * This function keep track of the bends in tree and
+ * fill that path in the array so it's easy to print 
+ * that path
+ */
 
 void largest_bends(struct node *root,char pre, char side, int num, int *max, int cur_max, int *a)
 {
@@ -77,6 +106,10 @@ void largest_bends(struct node *root,char pre, char side, int num, int *max, int
 	largest_bends(root->right, side, 'r', root->num, max, cur_max, a);
 }
 
+/*
+ * This function print the array which is filled with path
+ */
+
 void print_arr(int *arr, int size)
 {
 int i = 0;
@@ -86,6 +119,12 @@ int i = 0;
 
 	printf("\n");
 }
+
+/*
+ * This is the main function which is called by tha main 
+ * funtion and this function internally calls th largest_bend
+ * function
+ */
 
 void count_max_bends(struct node *root)
 {
