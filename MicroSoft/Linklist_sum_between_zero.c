@@ -12,6 +12,11 @@ struct node{
 		struct node *next;
 };
 
+/*
+ * This function return the new created node with
+ * passed number and next pointer with null
+ */
+
 struct node* get_new_node(int num)
 {
 	struct node *temp = (struct node*) malloc(sizeof(struct node));
@@ -21,6 +26,11 @@ struct node* get_new_node(int num)
 
 	return temp;
 }
+
+/*
+ * This function add the node at the end of the 
+ * linklist
+ */
 
 void add_node_to_list(struct node **hptr, int num)
 {
@@ -39,6 +49,10 @@ static struct node *pre = NULL;
 	}
 }
 
+/*
+ * This function print the linklist 
+ */
+
 void print_list(struct node *hptr)
 {
 	while(hptr != NULL)
@@ -50,6 +64,11 @@ void print_list(struct node *hptr)
 	printf("\n");
 }
 
+/*
+ * This is the main function which makes the 
+ * resultant linklist as the requirement 
+ */
+
 void modify_with_sum(struct node *hptr)
 {
 int sum = 0;
@@ -59,29 +78,23 @@ struct node *pre = NULL;
 
 	while(cur != NULL)
 	{
-		if(cur->num == 0)
+		if(cur->num != 0)
+		{
+			sum += cur->num;
+			cur = cur->next;
+		}
+
+		else
 		{
 			temp->num = sum;
-			sum = 0;
-			pre = temp;
-			temp = temp->next;
-		}
-
-		sum += cur->num;
-		cur = cur->next;
-	}
-
-	if(temp->num != hptr->num)
-	{
-		pre->next = NULL;
-	
-		while(temp != NULL)
-		{
-			cur = temp;
-			temp = temp->next;
+			temp->next = cur->next;
 			free(cur);
 			cur = NULL;
+			cur = temp->next;
+			temp = temp->next;
+			sum = 0;
 		}
+
 	}
 }
 
