@@ -1,3 +1,9 @@
+/*
+ * A person is standing at center(0, 0). He is facing north(N). 
+ * There can be 4 possible commands – Turn left, Turn right, Move ahead, 
+ * Move back. Find the final coordinates after a set of instructions.
+ */
+
 #include<stdio.h>
 
 typedef struct coordinate{
@@ -33,6 +39,14 @@ const char *direction = "NESW";
 */
 int facing = 0;
 
+   /*
+    * Instruction are taken as below
+    * R - Turn Right
+    * L - Turn Left
+    * F - Go one step forward
+    * B(Default) - Go one step backward
+    */
+
    while(*command){
 
       switch (*command){
@@ -52,10 +66,7 @@ int facing = 0;
                   yAxis -= yCoor[facing];
       }
 
-      if (facing < 0)
-         facing = 3;
-      else if (facing > 3)
-         facing = 0;
+      facing < 0 ? facing = 3 : (facing > 3) ? facing = 0 : facing;
 
       ++(command);
    }
