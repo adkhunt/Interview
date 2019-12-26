@@ -1,84 +1,57 @@
-#ifndef STACK
-#define STACK
+#ifndef stack
+#define stack
 
 #include<stdbool.h>
 
-/*
- * This header file contain the basic functionality
- * of the stack like push, pop and is stack empty
- * or not
- */
-
-/*
- * This structure contain the start index and
- * limit of the stack and also void double pointer
- * which holds the pointer of linklist
- */
-
-typedef struct STACK{
+typedef struct Stack{
 			int start,limit;
-			void **p;
-} stack;
+			struct node **arr;
+} Stack;
 
-/*
- * Create the stack of size passed in the 
- * parameter 
- */
-
-stack* create_stack(int size)
+Stack* create_stack(int size)
 {
-	stack *ret = (stack*) malloc(sizeof(stack));
+	Stack *ret = (Stack*) malloc(sizeof(Stack));
 
 	ret->start = -1;
-	ret->limit = size-1;
-	ret->p = (void**) malloc(sizeof(void*) * size);
+	ret->limit = size;
+	ret->arr = (struct node**) malloc(sizeof(struct node*)*size);
 
-	return ret;	
+	return ret;
 }
 
-/*
- * This is the push function which holds
- * the address of passed node in parameter
- */
-
-void push(stack *s, void *data_to_push)
+void push(Stack *s,struct node *nodeTopush)
 {
-	if(s -> start < s->limit)
+	if(s->start != s->limit)
 	{
-		s->p[++s->start] = (void*) data_to_push;
+		s->arr[++s->start] = nodeTopush;
+	}
+
+	else{	
+		printf("STACK IS FULL\n");
+		return;
+	}
+}
+
+struct node* pop(Stack *s)
+{
+	if(s->start != -1)
+	{
+		return s->arr[s->start--];
 	}
 
 	else
 	{
-		printf("STACK IS FULL.\n");
-	}
-}
-
-/*
- * This is the pop function which return the 
- * top node
- */
-
-void* pop(stack *s)
-{
-	if(s -> start != -1)
-	{
-		return s->p[s->start--];
-	}
-
-	else
-	{
-		printf("STACK IS EMPTY.\n");
+		printf("STACK IS EMPTY\n");
 		return NULL;
 	}
 }
 
-/*
- * This function return true if the stack
- * is empty
- */
+struct node* top(Stack *s)
+{
+	return s->arr[s->start];
+}
 
-bool is_empty(stack *s)
+bool isEmpty(Stack *s)
 {
 	return s->start == -1;
 }

@@ -41,7 +41,7 @@ int i;
 	for(i = s->start ; i >= 0 ; --i)
 	{
 		printf("| %d |\n",s->arr[i]);
-		printf(" ____ \n");
+		printf("----- \n");
 	}
 	printf("\n");
 }
