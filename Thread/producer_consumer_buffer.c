@@ -98,6 +98,11 @@ int main(){
    pthread_t producer, consumer;
 
    buffer *buff = init_buffer();
+   if (buff == NULL){
+      printf ("Buffer creation failed!\n");
+      return EXIT_FAILURE;
+   }
+   
    pthread_create(&producer, NULL, producer_thread, buff);
    pthread_create(&consumer, NULL, consumer_thread, buff);
    pthread_join(producer, NULL);
