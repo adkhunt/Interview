@@ -1,0 +1,28 @@
+1) Design time based job scheduler.
+eg. User submits the job j with time t, scheduler should shedule that job after given t time.
+    Input:  schedule_job (printf("Hi, start"), 6000L) // pritnf is the task and 6000 is the milisecond time.
+            schedule_job (printf("Hello, start", 2000L))
+            sleep(3);
+            schedule_job (printf ("Bye"), 4000L)
+            
+    Output: Hello, start
+            Bye
+            Hi, start
+            
+            
+2) Design garbage collector in cloud storage.
+  Eg. There is a public cloud, In that cloud user can push any number of files and storage is limited. So design a service which will
+      delete files after given time.
+      Lets say in folder f, user copied files and configured time by cloud provider is 5 days. After 5 days whatever files/folders
+      were created needs to deleted by service.
+      
+3) Design library (Standard question).
+4) Design malloc in OS.
+5) Reverse of question-1. Design a scheduler which takes process P and time T as argument and schedule that process normally.
+   After T time that process should get killed by scheduler.
+6) Design a insert and get method. Insert will take filename, key and value. given key and value needs to inserted to given file.
+   Get method will take key and find that key from files and return the corresponding value to that key.
+   Constrains: There could be thousands of files.
+    Eg. insert(file, key, value)
+        get (key)
+        
