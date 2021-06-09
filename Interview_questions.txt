@@ -6,8 +6,8 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
             schedule_job (printf ("Bye"), 4000L)
             
     Output: Hello, start
-            Bye
             Hi, start
+            Bye
             
             
 2) Design garbage collector in cloud storage.
