@@ -25,4 +25,8 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
    Constrains: There could be thousands of files.
     Eg. insert(file, key, value)
         get (key)
-        
+    
+7) Design a centralised system which can take care of installation of services on multiple targets.
+    Eg. There is a one management platform like vCenter where multiple ESXi are connected to it. Need to design a system in
+        vCenter which can take care of installation of service on all the ESXi servers.
+    --> Need to take care of take care of vm migration and storage migration if that service needs reboot of ESXi.
