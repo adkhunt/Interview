@@ -32,3 +32,21 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
     --> Need to take care of take care of vm migration and storage migration if that service needs reboot of ESXi.
     
 8) https://github.com/adkhunt/Interview/blob/master/Array/schedule_task_with_cooldown.c
+
+9) Array of integer denotes the wheels, WAP to print the number of ways to provide the solution.
+   Eg. Array of integer as below,
+       6, 8, 10, 3    <-- Which denotes the number of wheel. You have two option either you can have 2-wheeler or 4-wheeler so below could be the solution,
+       2, 3, 3, 0
+       When we have 6 wheels we can solve it as below,
+       1. We can have 3 2-wheelers.
+       2. We can have one 4-wheeler and one 2-wheeler.
+       So answer for 6 is 2.
+       When we have 3 in that case we can not provide any solution so answer is 0.
+       
+10) You are given a encoded string and WAP to decode that string.
+    Eg, my name is -> mnes--ya-----mi -> my name is (In below matrix arranged the character in diagonal position.)
+        m  n  e  s  _
+        _  y  a  _  _
+        _  _  _  m  i
+        
+    In above string you will be given the number of raw with encoded string and have to decode the string.
