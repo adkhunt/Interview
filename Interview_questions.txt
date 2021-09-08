@@ -50,3 +50,18 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
         _  _  _  m  i
         
     In above string you will be given the number of raw with encoded string and have to decode the string.
+    
+11) Delete Nth node from end in linklist.
+    Eg. 1 -> 2 -> 3 -> 4 -> 5 -> NULL, N = 2
+       Op: 1 -> 2 -> 3 -> 5 -> NULL
+       
+12) Given multiple source files, WAP to resolve depedency of those source files. (Topological sort)
+13) Design data-structure which can perform all(Insert, delete, search, getRandom) operation in O(1) time.
+14) Given a matrix with 0 and 1, where 0 indicate space and 1 indicate wall. Given starting and ending location. WAP if from starting location ball can reach to end     location.
+    Constrain: Ball only can turn once it hits to wall.
+    Eg. 1 1 0 0   -> Start location (0, 3) end location (3, 3)
+        1 0 0 0
+        1 0 1 1
+        1 0 0 0
+        
+15) Given a hierarchy of organisation, WAP to find closest manager of given two employee.
