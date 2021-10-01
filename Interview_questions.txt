@@ -65,3 +65,5 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
         1 0 0 0
         
 15) Given a hierarchy of organisation, WAP to find closest manager of given two employee.
+16) https://www.geeksforgeeks.org/combinations-string-digits/
+17) https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
