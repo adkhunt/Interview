@@ -67,3 +67,6 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
 15) Given a hierarchy of organisation, WAP to find closest manager of given two employee.
 16) https://www.geeksforgeeks.org/combinations-string-digits/
 17) https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
+18) Search and element in sorted row and colomn matrix.
+19) Given sorted array, value and k, print all k nearest element to value.
+20) https://www.geeksforgeeks.org/combinational-sum/
