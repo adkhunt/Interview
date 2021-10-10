@@ -71,7 +71,7 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
 19) Given sorted array, value and k, print all k nearest element to value.
 20) https://www.geeksforgeeks.org/combinational-sum/
 21) Create linklist from given tree at each level and return array or hptr of all level. (https://github.com/adkhunt/cpp/blob/master/create_linklist_bt_level.cpp)
-22) Producer and consumer problem.
+22) Producer and consumer problem.(https://github.com/adkhunt/Interview/blob/master/Thread/producer_consumer_buffer.c)
 23) Write a service to enter record of student in linklist/file and another to print detail of database.
     Constraints: 1) Service should be async (Any number of thread can call this service) and returns operation id immediately (Should not wait until actual entry).
                  2) Handle duplication entry in linklist.
