@@ -67,7 +67,7 @@ location. (https://github.com/adkhunt/cpp/blob/master/pathExists.cpp)
         
 15) Given a hierarchy of organisation, WAP to find closest manager of given two employee.
 16) https://www.geeksforgeeks.org/combinations-string-digits/
-17) https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
+17) https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/ (https://github.com/adkhunt/cpp/blob/master/clone_ll_with_random_ptr.cpp)
 18) Search and element in sorted row and colomn matrix.
 19) Given sorted array, value and k, print all k nearest element to value.
 20) https://www.geeksforgeeks.org/combinational-sum/
