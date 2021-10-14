@@ -43,7 +43,7 @@ eg. User submits the job j with time t, scheduler should shedule that job after 
        So answer for 6 is 2.
        When we have 3 in that case we can not provide any solution so answer is 0.
        
-10) You are given a encoded string and WAP to decode that string.
+10) You are given a encoded string and WAP to decode that string. (https://github.com/adkhunt/cpp/blob/master/debug_string.cpp)
     Eg, my name is -> mnes--ya-----mi -> my name is (In below matrix arranged the character in diagonal position.)
         m  n  e  s  _
         _  y  a  _  _
