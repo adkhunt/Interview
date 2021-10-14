@@ -1,4 +1,4 @@
-1) Design time based job scheduler.
+1) Design time based job scheduler. (https://github.com/adkhunt/Interview/blob/master/Thread/time_based_scheduler.c)
 eg. User submits the job j with time t, scheduler should shedule that job after given t time.
     Input:  schedule_job (printf("Hi, start"), 6000L) // pritnf is the task and 6000 is the milisecond time.
             schedule_job (printf("Hello, start", 2000L))
