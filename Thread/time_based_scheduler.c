@@ -25,6 +25,11 @@ void* execute_job(void *args){
 
 void schedule_job(void* job (void*), int time, char *str){
 
+	if (counter >= MAX_THREAD){
+		printf ("Can not schedule job. max limit reached.\n");
+		return ;
+	}
+
 	pthread_t t;
 	job_detail *detail = (job_detail*) malloc(sizeof(job_detail));
 	detail->timer = time;
