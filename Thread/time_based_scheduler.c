@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<pthread.h>
+#include<time.h>
 
 #define MAX_THREAD 10
 
@@ -14,9 +15,12 @@ typedef struct job_detail{
 } job_detail;
 
 void* execute_job(void *args){
+	time_t begin, end;
+	begin = time(NULL);
 	job_detail *detail = (job_detail*) args;
 	sleep(detail->timer);
-	printf ("%s\n", detail->str);
+	end = time(NULL);
+	printf ("%s -> %f\n", detail->str, difftime(end, begin));
 }
 
 void schedule_job(void* job (void*), int time, char *str){
