@@ -69,7 +69,7 @@ location. (https://github.com/adkhunt/cpp/blob/master/pathExists.cpp)
 16) https://www.geeksforgeeks.org/combinations-string-digits/
 17) https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/ (https://github.com/adkhunt/cpp/blob/master/clone_ll_with_random_ptr.cpp)
 18) Search and element in sorted row and colomn matrix.
-19) Given sorted array, value and k, print all k nearest element to value.
+19) Given sorted array, value and k, print all k nearest element to value. (https://github.com/adkhunt/cpp/blob/master/print_k_nearest_in_sorted.cpp)
 20) https://www.geeksforgeeks.org/combinational-sum/
 21) Create linklist from given tree at each level and return array or hptr of all level. (https://github.com/adkhunt/cpp/blob/master/create_linklist_bt_level.cpp)
 22) Producer and consumer problem.(https://github.com/adkhunt/Interview/blob/master/Thread/producer_consumer_buffer.c)
