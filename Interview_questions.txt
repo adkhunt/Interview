@@ -76,3 +76,7 @@ location. (https://github.com/adkhunt/cpp/blob/master/pathExists.cpp)
 23) Write a service to enter record of student in linklist/file and another to print detail of database.
     Constraints: 1) Service should be async (Any number of thread can call this service) and returns operation id immediately (Should not wait until actual entry).
                  2) Handle duplication entry in linklist.
+24) Write a program to print tree in in-order traversal using iterative method.
+25) Dutch nation flag problem.
+26) WAP two program which shows use of shared memory.
+    Addition to this question: One program is keep sending the filename and other program will read filename and return the content of file to first program.
