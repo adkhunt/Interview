@@ -80,3 +80,11 @@ location. (https://github.com/adkhunt/cpp/blob/master/pathExists.cpp)
 25) Dutch nation flag problem.
 26) WAP two program which shows use of shared memory.
     Addition to this question: One program is keep sending the filename and other program will read filename and return the content of file to first program.
+27) What is unix socket domain.
+28) How to see memory allocation of c program. (size a.out)
+29) Difference between fork and exec.
+29) select & poll in unix.
+30) What happen internally when we open file. (App->VFS->FS->BlockLayer(BIO-Object)->DeviceDriver->H/W)
+31) How address is decoded in x86 architecture.
+32) What is huge page in x86 architecture in linux.
+33) Boot process of linux.
