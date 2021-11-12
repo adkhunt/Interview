@@ -93,3 +93,5 @@ location. (https://github.com/adkhunt/cpp/blob/master/pathExists.cpp)
 36) What internally happen when you type any url in browser.
 37) Initial communication of newly added device in network. (How it get ip and how it broadcast its detail to n/w connected by switch).
 38) write a library for stack in c. (Should be thread safe).
+39) What is function callback.
+40) WAP where three threads keep on allocating memory each second and fourth thread will print total allocated memory by each thread every 10 second.
