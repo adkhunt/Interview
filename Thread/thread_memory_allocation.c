@@ -31,7 +31,7 @@ typedef struct mem_thread_info{
 mem_thread_info* init_mem_thread_info(int size){
 
 	mem_thread_info *info = (mem_thread_info*) malloc(
-											sizeof(mem_thread_info));
+					sizeof(mem_thread_info));
 	info->t_list = (pthread_t*) malloc(sizeof(pthread_t)*size);
 	info->hptr = NULL;
 	info->total_thread = size;
@@ -97,7 +97,7 @@ void* monitor_thread(void *args){
 		mem_list *temp = cur_info->hptr;
 		while(temp){
 			printf ("Thread Id = %lu, Size = %d\n", temp->res->id,
-																temp->res->size);
+								temp->res->size);
 			temp = temp->next;
 		}
 		i += 10;
