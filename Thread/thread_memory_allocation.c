@@ -52,9 +52,11 @@ mem_list* get_thread_node(pthread_t id){
 void register_thread(mem_thread_info *info, mem_list *node){
 
 	pthread_mutex_lock(&(info->lock));
-	mem_list *temp = info->hptr;
-	info->hptr = node;
-	node->next = temp;
+	node->next = info->hptr;
+	info->hprt = node;
+	//mem_list *temp = info->hptr;
+	//info->hptr = node;
+	//node->next = temp;
 	pthread_mutex_unlock(&(info->lock));
 }
 
