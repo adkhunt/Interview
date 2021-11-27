@@ -95,3 +95,98 @@ location. (https://github.com/adkhunt/cpp/blob/master/pathExists.cpp)
 38) write a library for stack in c. (Should be thread safe).
 39) What is function callback.
 40) WAP where three threads keep on allocating memory each second and fourth thread will print total allocated memory by each thread every 10 second. (https://github.com/adkhunt/Interview/blob/master/Thread/thread_memory_allocation.c)
+
+41) --------------------------------------------------------------------------------------------------------------------------------------------
+We are working on a security system for a badged-access room in our company's building.
+
+
+We want to find employees who badged into our secured room unusually often. We have an unordered list of names and entry times over a single day. Access times are given as numbers up to four digits in length using 24-hour time, such as "800" or "2250".
+
+
+Write a function that finds anyone who badged into the room three or more times in a one-hour period. Your function should return each of the employees who fit that criteria, plus the times that they badged in during the one-hour period. If there are multiple one-hour periods where this was true for an employee, just return the earliest one for that employee.
+
+
+badge_times = [
+  ["Paul",      "1355"], ["Jennifer",  "1910"], ["Jose",    "835"],
+  ["Jose",       "830"], ["Paul",      "1315"], ["Chloe",     "0"],
+  ["Chloe",     "1910"], ["Jose",      "1615"], ["Jose",   "1640"],
+  ["Paul",      "1405"], ["Jose",       "855"], ["Jose",    "930"],
+  ["Jose",       "915"], ["Jose",       "730"], ["Jose",    "940"],
+  ["Jennifer",  "1335"], ["Jennifer",   "730"], ["Jose",   "1630"],
+  ["Jennifer",     "5"], ["Chloe",     "1909"], ["Zhang",     "1"],
+  ["Zhang",       "10"], ["Zhang",      "109"], ["Zhang",   "110"],
+  ["Amos",         "1"], ["Amos",         "2"], ["Amos",    "400"],
+  ["Amos",       "500"], ["Amos",       "503"], ["Amos",    "504"],
+  ["Amos",       "601"], ["Amos",       "602"],
+];
+
+
+Expected output (in any order)
+   Paul: 1315 1355 1405
+   Jose: 830 835 855 915 930
+   Zhang: 10 109 110
+   Amos: 500 503 504
+
+
+n: length of the badge records array
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+42) --------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * An service serves files in multiple physical locations in order to minimise client latency.
+ * Cloudfront can be visualised as a 2D grid of servers. When provider wants to host a file on Cloudfront,
+ * the file needs to be distributed to all servers. The servers are in the form of a 2D array of 0s and 1s,
+ * where the value 0 represents a server that has yet to receive the file and 1 represents a server that
+ * already has the file.
+ * 
+ * Provider will initially send the file to a handful of (but not all) servers based on expected utilisation.
+ * A server, upon receiving a file, will then send the file to adjacent servers that don't yet have the file.
+ * An adjacent server is either on the left, right, above or below a given server. To conserve bandwidth,
+ * once a server receives a file, it will wait 1 hour before sending the file to adjacent servers.
+ * 
+ * Given the 2D array representing the existence of a new file on each server, write an algorithm that will 
+ * determine the minimum number of hours required to send the file to all the available servers.
+ * 
+ * Input:
+ * The input to the function/method consists of three arguments:
+ * rows, an integer representing the number of rows in the grid;
+ * columns, an integer representing the number of columns in the grid;
+ * grid, an integer array representing the current status of its servers.
+ *       The value 0 represents a server that has yet to receive the file and 1 represents a
+ *       server that already has the file.
+ * 
+ * Output:
+ * Return an integer representing the minimum number of hours required to send the file to all the available
+ * servers. Return -1 if all the available servers cannot receive the file.
+ * 
+ * Note:
+ * Diagonally placed cells are not considered adjacent.
+ * 
+ * Example
+ * Input:
+ * rows = 4
+ * columns = 5
+ * grid =
+ * [[0, 1, 1, 0, 1],
+ *  [0, 1, 0, 1, 0],
+ *  [0, 0, 0, 0, 1],
+ *  [0, 1, 0, 0, 0]]
+ * 
+ * Output:
+ * 2
+ * 
+ * Explanation:
+ * At the end of the first hour, the status of the servers :
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 0, 1, 0, 1, 1
+ * 1, 1, 1, 0, 1
+ * 
+ * at the end of the second hour, the status of the servers :
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 
+ * By the end of two hours, all the servers are up to date.
+ --------------------------------------------------------------------------------------------------------------------------------------------
