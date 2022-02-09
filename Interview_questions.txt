@@ -191,3 +191,5 @@ n: length of the badge records array
  * 
  * By the end of two hours, all the servers are up to date.
  --------------------------------------------------------------------------------------------------------------------------------------------
+
+42) Binary buddy bitmap.
