@@ -196,3 +196,4 @@ n: length of the badge records array
 43) Write a program to crawl a website. (DFS with modified levels in traversal)
     Constrains: Seeds Urls are given and also given a max depth till where you have to traverse.
     Assumption: There is a given api which will return list of Urls inside given Url.
+44) Floyd's cycle detection.
