@@ -197,3 +197,11 @@ n: length of the badge records array
     Constrains: Seeds Urls are given and also given a max depth till where you have to traverse.
     Assumption: There is a given api which will return list of Urls inside given Url.
 44) Floyd's cycle detection.
+45) Print all leaf nodes recursively in tree.
+    Eg.     1           1
+          /   \
+        2      3
+      /  \
+    4     5
+    Output: [[4, 5, 3], [2], [1]]
+    Constraints: Do not modify the tree. Once leaf node is printed print next leaf node in the tree.
