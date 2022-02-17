@@ -197,7 +197,7 @@ n: length of the badge records array
     Constrains: Seeds Urls are given and also given a max depth till where you have to traverse.
     Assumption: There is a given api which will return list of Urls inside given Url.
 44) Floyd's cycle detection.
-45) Print all leaf nodes recursively in tree.
+45) Print all leaf nodes recursively in tree.  (https://github.com/adkhunt/cpp/blob/master/print_leaf_recursive.cpp)
     Eg.     1           1
           /   \
         2      3
@@ -205,3 +205,13 @@ n: length of the badge records array
     4     5
     Output: [[4, 5, 3], [2], [1]]
     Constraints: Do not modify the tree. Once leaf node is printed print next leaf node in the tree.
+46) Given a list of sting and a word, find all words which can be create by modifying one character.
+    Eg. Given List: ["tip", "top", "hop", "dog", "gog", "cop", "hip", "sip", "tog"]
+        Given Word: cog
+        Output: ["dog", "gog"]
+        
+    Addition to above question: Given a source word and target word, find the minimum hop to reach to target word.
+    Eg. Start Word: tip
+        target word: cop
+        Conversion: tip -> top -> cop
+        Output: 2
