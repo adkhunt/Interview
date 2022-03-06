@@ -217,5 +217,5 @@ n: length of the badge records array
         Output: 2
 47) https://github.com/adkhunt/cpp/blob/master/find_word_in_matrix.cpp
 48) Fllod fill algorithm in paint. (https://github.com/adkhunt/cpp/blob/master/flood_fill.cpp)
-49) Maximum number of meetings that can be attended from given schedule of time.
+49) Maximum number of meetings that can be attended from given schedule of time. (https://github.com/adkhunt/cpp/blob/master/max_meeting_attend.cpp)
 50) Minimum edit distance.
