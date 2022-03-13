@@ -205,12 +205,12 @@ n: length of the badge records array
     4     5
     Output: [[4, 5, 3], [2], [1]]
     Constraints: Do not modify the tree. Once leaf node is printed print next leaf node in the tree.
-46) Given a list of sting and a word, find all words which can be create by modifying one character.
+46) Given a list of sting and a word, find all words which can be create by modifying one character. (https://github.com/adkhunt/cpp/blob/master/string_with_one_char_diff.cpp)
     Eg. Given List: ["tip", "top", "hop", "dog", "gog", "cop", "hip", "sip", "tog"]
         Given Word: cog
         Output: ["dog", "gog"]
         
-    Addition to above question: Given a source word and target word, find the minimum hop to reach to target word.
+    Addition to above question: Given a source word and target word, find the minimum hop to reach to target word. (BFS on all possible result.)
     Eg. Start Word: tip
         target word: cop
         Conversion: tip -> top -> cop
