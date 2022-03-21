@@ -223,3 +223,9 @@ n: length of the badge records array
     Eg. 1 + 2) * 3 - 4) * 5 - 6)))
     Op -> ((1+2) * ((3-4) * (5-6)))
 52) Given perfect binary tree. Swap all leaf node with non-leaf nodes.
+53) Given data of student in form of <name, grade>. Write a program which supports below operations effectively,
+    1) Add detail of student.
+    2) Delete given detail from data structure.
+    3) Print all student with given grade.
+    4) Print all student with grade order.
+    5) Print all pair(2) of student whose grade sum is equal to given sum.
