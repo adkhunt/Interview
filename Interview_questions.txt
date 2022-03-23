@@ -219,7 +219,7 @@ n: length of the badge records array
 48) Fllod fill algorithm in paint. (https://github.com/adkhunt/cpp/blob/master/flood_fill.cpp)
 49) Maximum number of meetings that can be attended from given schedule of time. (https://github.com/adkhunt/cpp/blob/master/max_meeting_attend.cpp)
 50) Minimum edit distance.
-51) Given infix expression without opening braces. Write a program to create valid infix expression.
+51) Given infix expression without opening braces. Write a program to create valid infix expression. (https://github.com/adkhunt/cpp/blob/master/Valid_infix_expression.cpp)
     Eg. 1 + 2) * 3 - 4) * 5 - 6)))
     Op -> ((1+2) * ((3-4) * (5-6)))
 52) Given perfect binary tree. Swap all leaf node with non-leaf nodes.
