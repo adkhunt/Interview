@@ -222,7 +222,7 @@ n: length of the badge records array
 51) Given infix expression without opening braces. Write a program to create valid infix expression. (https://github.com/adkhunt/cpp/blob/master/Valid_infix_expression.cpp)
     Eg. 1 + 2) * 3 - 4) * 5 - 6)))
     Op -> ((1+2) * ((3-4) * (5-6)))
-52) Given perfect binary tree. Swap all leaf node with non-leaf nodes.
+52) Given perfect binary tree. Swap all leaf node with non-leaf nodes. (https://github.com/adkhunt/cpp/blob/master/Swap_leaf_nodes.cpp)
 53) Given data of student in form of <name, grade>. Write a program which supports below operations effectively,
     1) Add detail of student.
     2) Delete given detail from data structure.
