@@ -229,3 +229,42 @@ n: length of the badge records array
     3) Print all student with given grade.
     4) Print all student with grade order.
     5) Print all pair(2) of student whose grade sum is equal to given sum.
+54) Given an array A consisting of every number from 1 to N arranged in a random order.
+    It is also possible to swap a particular element at index i with an element at index i+1 for a particular set of indices.
+    The indices for which these swaps are allowed are given in the form of a string S of 1's and 0's.
+    If the i'th position of a string has 1, then it is possible to swap the i'th element of index with the (i+1)'th element else it is not allowed.
+    There is no limit on the number of swaps allowed, that is, you can make any number of swaps (as long as they are valid).
+    Find if it is possible to arrange the array in ascending order using any amount of swaps.
+    Constraints:
+    1.   2 <= N <= 100000
+    2.   String S contains n-1 characters and is made up of only 0's and 1's.
+    Input: Integer N (size of array) , array of containing elements from 1 to N in random order, string S made up of 1's and 0's
+    Output: Return a string "YES" if it is possible to arrange array in ascending order, else return "NO".
+
+55) Assume there are 'n' machines where each machine can talk to only neighbouring machines ( i.e to machine to left or to right one if it exists) and assume you are given below functions which have been already implemented and each machine can run them.
+
+    Already Implemented functions:
+
+    bool hasLeft() : returns true if there is a machine on left else false
+    bool hasRight() : returns true if there is a machine on right else false
+    void sendLeft(Message m) : sends a message to machine on left
+    void sendRight(Message m) : sends a message to machine on right
+    
+    Now using above functions implement below functions :
+    
+    void receiveLeft(Message m) : receives message from left machine
+    void receiveRight(Message m) : receives message from right machine
+    void start() : a start routine that each machine runs when it gets booted up
+    
+    keeping in mind that the goal for each machine is to compute the size of the list i.e 'n'.
+
+
+56) Given a matrix with integer value, find the minimum to reach at the end of the matrix.
+    Start from [0][0] index and can be go in any four directions.
+
+57) Given a binary tree where each node can only have a digit (0-9) value, each root-to-leaf path will represent a number. Find the total sum of all the numbers represented by all paths.
+
+58) Given a binary tree, populate an array to represent its zigzag level order traversal. You should populate the values of all nodes of the first level from left to right, then right to left for the //next level and keep alternating in the same manner for the following levels.
+
+59) CSV parser using cpp
+60) WAP to get the minimum steps to reach to floor. given max up and down value.
